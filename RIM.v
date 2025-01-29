@@ -32,8 +32,7 @@ always@(posedge clk or negedge rst_n)begin
             row<=3'd0;
             path_num <= 4'd0;
         end else begin
-            if(map[project_p])
-                map[project_p] <= 1'b0;
+            map[project_p] <= 1'b0;
             if (!complete_ans || count_rat!=15) begin
                 if(dead_path) begin
                     row <= stack_row;
