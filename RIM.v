@@ -122,12 +122,12 @@ module stack(
     output [2:0] row_out,col_out,
     output [3:0] path_num_out
 );
-reg [2:0] count;
+reg [3:0] count;
 reg [2:0] stack_row,stack_col [2:0];
 reg [3:0] stack_path_num [2:0];
-assign row_out=stack_row[count];
-assign col_out=stack_col[count];
-assign path_num_out=stack_path_num[count];
+assign row_out=stack_row[count-1];
+assign col_out=stack_col[count-1];
+assign path_num_out=stack_path_num[count-1];
 always@(posedge clk or negedge rst_n)begin
     if(!rst_n)begin
         count<=0;
